@@ -1,0 +1,55 @@
+pkgbase = jdk11-adoptopenjdk
+	pkgdesc = OpenJDK Java 11 development kit (AdoptOpenJDK build)
+	pkgver = 11.0.4.u11
+	pkgrel = 1
+	url = https://adoptopenjdk.net/
+	install = install_jdk11-adoptopenjdk.sh
+	arch = x86_64
+	license = custom
+	depends = java-runtime-common>=3
+	depends = ca-certificates-utils
+	depends = desktop-file-utils
+	depends = libxrender
+	depends = libxtst
+	depends = alsa-lib
+	optdepends = gtk2: for the Gtk+ 2 look and feel
+	optdepends = gtk3: for the Gtk+ 3 look and feel
+	provides = java-runtime-headless=11
+	provides = java-runtime-headless-openjdk=11
+	provides = jre11-openjdk-headless=11.0.4.u11
+	provides = jre-openjdk-headless=11.0.4.u11
+	provides = java-runtime=11
+	provides = java-runtime-openjdk=11
+	provides = jre11-openjdk=11.0.4.u11
+	provides = jre-openjdk=11.0.4.u11
+	provides = java-environment=11
+	provides = java-environment-openjdk=11
+	provides = jdk11-openjdk=11.0.4.u11
+	provides = jdk-openjdk=11.0.4.u11
+	provides = openjdk11-src=11.0.4.u11
+	provides = openjdk-src=11.0.4.u11
+	backup = etc/jdk11-adoptopenjdk/net.properties
+	backup = etc/jdk11-adoptopenjdk/logging.properties
+	backup = etc/jdk11-adoptopenjdk/security/java.security
+	backup = etc/jdk11-adoptopenjdk/security/policy/limited/exempt_local.policy
+	backup = etc/jdk11-adoptopenjdk/security/policy/limited/default_US_export.policy
+	backup = etc/jdk11-adoptopenjdk/security/policy/limited/default_local.policy
+	backup = etc/jdk11-adoptopenjdk/security/policy/unlimited/default_US_export.policy
+	backup = etc/jdk11-adoptopenjdk/security/policy/unlimited/default_local.policy
+	backup = etc/jdk11-adoptopenjdk/security/policy/README.txt
+	backup = etc/jdk11-adoptopenjdk/security/java.policy
+	backup = etc/jdk11-adoptopenjdk/management/management.properties
+	backup = etc/jdk11-adoptopenjdk/management/jmxremote.access
+	backup = etc/jdk11-adoptopenjdk/management/jmxremote.password.template
+	backup = etc/jdk11-adoptopenjdk/sound.properties
+	source = https://github.com/AdoptOpenJDK/openjdk11-binaries/releases/download/jdk-11.0.4%2B11/OpenJDK11U-jdk_x64_linux_hotspot_11.0.4_11.tar.gz
+	source = freedesktop-java.desktop
+	source = freedesktop-jconsole.desktop
+	source = freedesktop-jshell.desktop
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = jdk11-adoptopenjdk
+

@@ -1,0 +1,85 @@
+# Maintainer: Ricardo Alexandre Vieira <vierinha@gmail.com>
+
+# This is a modified version of the jdk-adoptopenjdk PKGBUILD
+# which is maintained by Michael Lass <bevan@bi-co.net>
+
+# Maintainer: Michael Lass <bevan@bi-co.net>
+
+# This PKGBUILD heavily borrows from java-openjdk in [extra] maintained by:
+# Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Guillaume ALAUX <guillaume@archlinux.org>
+
+# This PKGBUILD is maintained on github:
+# https://github.com/michaellass/AUR
+
+_majorver=8
+_minorver=222
+_updatever=10
+pkgrel=1
+pkgver=${_majorver}.u${_minorver}.b${_updatever}
+_tag_ver=${_majorver}u${_minorver}b${_updatever}
+
+pkgname=jdk8-adoptopenjdk
+pkgdesc="OpenJDK Java ${_majorver} development kit (AdoptOpenJDK build)"
+arch=('x86_64')
+url='https://adoptopenjdk.net/'
+license=('custom')
+
+depends=('java-runtime-common>=3' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
+optdepends=('gtk2: for the Gtk+ 2 look and feel'
+            'gtk3: for the Gtk+ 3 look and feel')
+provides=("java-runtime-headless=${_majorver}"
+          "java-runtime-headless-openjdk=${_majorver}"
+          "jre${_majorver}-openjdk-headless=${pkgver}"
+          "jre-openjdk-headless=${pkgver}"
+          "java-runtime=${_majorver}"
+          "java-runtime-openjdk=${_majorver}"
+          "jre${_majorver}-openjdk=${pkgver}"
+          "jre-openjdk=${pkgver}"
+          "java-environment=${_majorver}"
+          "java-environment-openjdk=${_majorver}"
+          "jdk${_majorver}-openjdk=${pkgver}"
+          "jdk-openjdk=${pkgver}"
+          "openjdk${_majorver}-src=${pkgver}"
+          "openjdk-src=${pkgver}")
+
+install=install_jdk8-adoptopenjdk.sh
+
+source=(https://github.com/AdoptOpenJDK/openjdk${_majorver}-binaries/releases/download/jdk${_tag_ver/b/-b}/OpenJDK${_majorver}U-jdk_x64_linux_hotspot_${_tag_ver}.tar.gz
+        freedesktop-java.desktop
+        freedesktop-jconsole.desktop
+        freedesktop-policytool.desktop)
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
+
+_jvmdir=/usr/lib/jvm/java-${_majorver}-adoptopenjdk
+_jdkdir=jdk${_tag_ver/b/-b}
+
+package() {
+
+  install -dm 755 "${pkgdir}${_jvmdir}"
+  cp -a "${srcdir}/${_jdkdir}"/* "${pkgdir}${_jvmdir}"
+
+  cd "${pkgdir}${_jvmdir}"
+
+  # Man pages
+  for f in man/man1/* man/ja/man1/* man/ja_JP.UTF-8/man1/*; do
+    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-adoptopenjdk${_majorver}.1}"
+  done
+  rm -rf man
+  ln -sf /usr/share/man man
+
+  # Link JKS keystore from ca-certificates-utils
+  rm -f jre/lib/security/cacerts
+  ln -sf /etc/ssl/certs/java/cacerts jre/lib/security/cacerts
+
+  # Desktop files
+  for f in jconsole policytool java; do
+    install -Dm 644 \
+      "${srcdir}/freedesktop-${f}.desktop" \
+      "${pkgdir}/usr/share/applications/${f}-${pkgname}.desktop"
+  done
+
+}
