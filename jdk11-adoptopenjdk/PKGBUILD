@@ -14,7 +14,7 @@
 
 _majorver=11
 _minorver=0
-_securityver=5
+_securityver=6
 _updatever=10
 pkgrel=1
 pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
