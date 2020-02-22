@@ -14,8 +14,8 @@
 
 _majorver=13
 _minorver=0
-_securityver=1
-_updatever=9
+_securityver=2
+_updatever=8
 pkgrel=1
 pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
 _tag_ver=${_majorver}.${_minorver}.${_securityver}+${_updatever}
