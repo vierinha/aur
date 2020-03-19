@@ -12,15 +12,14 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_majorver=13
-_minorver=0
-_securityver=2
-_updatever=8
+_majorver=14
+_completever=14
+_updatever=36
 pkgrel=1
-pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
-_tag_ver=${_majorver}.${_minorver}.${_securityver}+${_updatever}
+pkgver=${_completever}.u${_updatever}
+_tag_ver=${_completever}+${_updatever}
 
-pkgname=jdk13-adoptopenjdk
+pkgname=jdk14-adoptopenjdk
 pkgdesc="OpenJDK Java ${_majorver} development kit (AdoptOpenJDK build)"
 arch=('x86_64')
 url='https://adoptopenjdk.net/'
@@ -58,7 +57,7 @@ backup=(etc/${pkgname}/logging.properties
         etc/${pkgname}/security/policy/unlimited/default_local.policy
         etc/${pkgname}/security/policy/unlimited/default_US_export.policy
         etc/${pkgname}/sound.properties)
-install=install_jdk13-adoptopenjdk.sh
+install=install_jdk14-adoptopenjdk.sh
 
 source=(https://github.com/AdoptOpenJDK/openjdk${_majorver}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_majorver}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
