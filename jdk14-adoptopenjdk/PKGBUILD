@@ -13,11 +13,12 @@
 # https://github.com/michaellass/AUR
 
 _majorver=14
-_completever=14
-_updatever=36
+_minorver=0
+_securityver=1
+_updatever=7
 pkgrel=1
-pkgver=${_completever}.u${_updatever}
-_tag_ver=${_completever}+${_updatever}
+pkgver=${_majorver}.${_minorver}.${_securityver}.u${_updatever}
+_tag_ver=${_majorver}.${_minorver}.${_securityver}+${_updatever}
 
 pkgname=jdk14-adoptopenjdk
 pkgdesc="OpenJDK Java ${_majorver} development kit (AdoptOpenJDK build)"
