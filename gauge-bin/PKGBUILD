@@ -1,0 +1,19 @@
+# Maintainer: Ricardo Alexandre Vieira <vierinha@gmail.com>
+
+pkgname=gauge-bin
+pkgver=1.1.1
+pkgrel=1
+pkgdesc="Light weight cross-platform test automation tool."
+arch=('x86_64')
+url="https://getgauge.io"
+license=('GPL3')
+makedepends=('unzip')
+
+source=("https://github.com/getgauge/gauge/releases/download/v${pkgver}/gauge-${pkgver}-linux.${arch}.zip")
+sha256sums=('a6c01d217163233741d8af2ca03b5254d01ef907b983376a46d3d4abb6b336e8')
+
+package() {
+	mkdir -p ${pkgdir}/usr/bin
+    unzip gauge-${pkgver}-linux.${arch}.zip -d ${pkgdir}/usr/bin
+    chmod +x ${pkgdir}/usr/bin/gauge
+}

@@ -1,0 +1,12 @@
+pkgbase = gauge-bin
+	pkgdesc = Light weight cross-platform test automation tool.
+	pkgver = 1.1.1
+	pkgrel = 1
+	url = https://getgauge.io
+	arch = x86_64
+	license = GPL3
+	makedepends = unzip
+	source = https://github.com/getgauge/gauge/releases/download/v1.1.1/gauge-1.1.1-linux.x86_64.zip
+	sha256sums = a6c01d217163233741d8af2ca03b5254d01ef907b983376a46d3d4abb6b336e8
+
+pkgname = gauge-bin
