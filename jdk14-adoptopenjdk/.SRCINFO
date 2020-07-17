@@ -1,6 +1,6 @@
 pkgbase = jdk14-adoptopenjdk
 	pkgdesc = OpenJDK Java 14 development kit (AdoptOpenJDK build)
-	pkgver = 14.0.1.u7
+	pkgver = 14.0.2.u12
 	pkgrel = 1
 	url = https://adoptopenjdk.net/
 	install = install_jdk14-adoptopenjdk.sh
@@ -16,18 +16,18 @@ pkgbase = jdk14-adoptopenjdk
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=14
 	provides = java-runtime-headless-openjdk=14
-	provides = jre14-openjdk-headless=14.0.1.u7
-	provides = jre-openjdk-headless=14.0.1.u7
+	provides = jre14-openjdk-headless=14.0.2.u12
+	provides = jre-openjdk-headless=14.0.2.u12
 	provides = java-runtime=14
 	provides = java-runtime-openjdk=14
-	provides = jre14-openjdk=14.0.1.u7
-	provides = jre-openjdk=14.0.1.u7
+	provides = jre14-openjdk=14.0.2.u12
+	provides = jre-openjdk=14.0.2.u12
 	provides = java-environment=14
 	provides = java-environment-openjdk=14
-	provides = jdk14-openjdk=14.0.1.u7
-	provides = jdk-openjdk=14.0.1.u7
-	provides = openjdk14-src=14.0.1.u7
-	provides = openjdk-src=14.0.1.u7
+	provides = jdk14-openjdk=14.0.2.u12
+	provides = jdk-openjdk=14.0.2.u12
+	provides = openjdk14-src=14.0.2.u12
+	provides = openjdk-src=14.0.2.u12
 	backup = etc/jdk14-adoptopenjdk/logging.properties
 	backup = etc/jdk14-adoptopenjdk/management/jmxremote.access
 	backup = etc/jdk14-adoptopenjdk/management/jmxremote.password.template
@@ -43,7 +43,7 @@ pkgbase = jdk14-adoptopenjdk
 	backup = etc/jdk14-adoptopenjdk/security/policy/unlimited/default_local.policy
 	backup = etc/jdk14-adoptopenjdk/security/policy/unlimited/default_US_export.policy
 	backup = etc/jdk14-adoptopenjdk/sound.properties
-	source = https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14.0.1%2B7/OpenJDK14U-jdk_x64_linux_hotspot_14.0.1_7.tar.gz
+	source = https://github.com/AdoptOpenJDK/openjdk14-binaries/releases/download/jdk-14.0.2%2B12/OpenJDK14U-jdk_x64_linux_hotspot_14.0.2_12.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-jshell.desktop
