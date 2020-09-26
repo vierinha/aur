@@ -1,6 +1,6 @@
 pkgbase = jdk8-adoptopenjdk
 	pkgdesc = OpenJDK Java 8 development kit (AdoptOpenJDK build)
-	pkgver = 8.u262.b10
+	pkgver = 8.u265.b01
 	pkgrel = 1
 	url = https://adoptopenjdk.net/
 	install = install_jdk8-adoptopenjdk.sh
@@ -16,19 +16,19 @@ pkgbase = jdk8-adoptopenjdk
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=8
 	provides = java-runtime-headless-openjdk=8
-	provides = jre8-openjdk-headless=8.u262.b10
-	provides = jre-openjdk-headless=8.u262.b10
+	provides = jre8-openjdk-headless=8.u265.b01
+	provides = jre-openjdk-headless=8.u265.b01
 	provides = java-runtime=8
 	provides = java-runtime-openjdk=8
-	provides = jre8-openjdk=8.u262.b10
-	provides = jre-openjdk=8.u262.b10
+	provides = jre8-openjdk=8.u265.b01
+	provides = jre-openjdk=8.u265.b01
 	provides = java-environment=8
 	provides = java-environment-openjdk=8
-	provides = jdk8-openjdk=8.u262.b10
-	provides = jdk-openjdk=8.u262.b10
-	provides = openjdk8-src=8.u262.b10
-	provides = openjdk-src=8.u262.b10
-	source = https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u262-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u262b10.tar.gz
+	provides = jdk8-openjdk=8.u265.b01
+	provides = jdk-openjdk=8.u265.b01
+	provides = openjdk8-src=8.u265.b01
+	provides = openjdk-src=8.u265.b01
+	source = https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u265-b01/OpenJDK8U-jdk_x64_linux_hotspot_8u265b01.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-policytool.desktop
