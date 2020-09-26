@@ -12,15 +12,16 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_majorver=15
-_completever=15
-_updatever=36
+_featurever=15
+_interimver=0
+_updatever=0
+_patchver=36
 pkgrel=1
-pkgver=${_completever}.u${_updatever}
-_tag_ver=${_completever}+${_updatever}
+pkgver=${_featurever}.+${_patchver}
+_tag_ver=${_featurever}+${_patchver}
 
 pkgname=jdk15-adoptopenjdk
-pkgdesc="OpenJDK Java ${_majorver} development kit (AdoptOpenJDK build)"
+pkgdesc="OpenJDK Java ${_featurever} development kit (AdoptOpenJDK build)"
 arch=('x86_64')
 url='https://adoptopenjdk.net/'
 license=('custom')
@@ -28,19 +29,19 @@ license=('custom')
 depends=('java-runtime-common>=3' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
 optdepends=('gtk2: for the Gtk+ 2 look and feel'
             'gtk3: for the Gtk+ 3 look and feel')
-provides=("java-runtime-headless=${_majorver}"
-          "java-runtime-headless-openjdk=${_majorver}"
-          "jre${_majorver}-openjdk-headless=${pkgver}"
+provides=("java-runtime-headless=${_featurever}"
+          "java-runtime-headless-openjdk=${_featurever}"
+          "jre${_featurever}-openjdk-headless=${pkgver}"
           "jre-openjdk-headless=${pkgver}"
-          "java-runtime=${_majorver}"
-          "java-runtime-openjdk=${_majorver}"
-          "jre${_majorver}-openjdk=${pkgver}"
+          "java-runtime=${_featurever}"
+          "java-runtime-openjdk=${_featurever}"
+          "jre${_featurever}-openjdk=${pkgver}"
           "jre-openjdk=${pkgver}"
-          "java-environment=${_majorver}"
-          "java-environment-openjdk=${_majorver}"
-          "jdk${_majorver}-openjdk=${pkgver}"
+          "java-environment=${_featurever}"
+          "java-environment-openjdk=${_featurever}"
+          "jdk${_featurever}-openjdk=${pkgver}"
           "jdk-openjdk=${pkgver}"
-          "openjdk${_majorver}-src=${pkgver}"
+          "openjdk${_featurever}-src=${pkgver}"
           "openjdk-src=${pkgver}")
 backup=(etc/${pkgname}/logging.properties
         etc/${pkgname}/management/jmxremote.access
@@ -59,7 +60,7 @@ backup=(etc/${pkgname}/logging.properties
         etc/${pkgname}/sound.properties)
 install=install_jdk15-adoptopenjdk.sh
 
-source=(https://github.com/AdoptOpenJDK/openjdk${_majorver}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_majorver}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
+source=(https://github.com/AdoptOpenJDK/openjdk${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
@@ -68,7 +69,7 @@ sha256sums=('SKIP'
             'SKIP'
             'SKIP')
 
-_jvmdir=/usr/lib/jvm/java-${_majorver}-adoptopenjdk
+_jvmdir=/usr/lib/jvm/java-${_featurever}-adoptopenjdk
 _jdkdir=jdk-${_tag_ver}
 
 package() {
@@ -90,7 +91,7 @@ package() {
 
   # Man pages
   for f in man/man1/*; do
-    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-adoptopenjdk${_majorver}.1}"
+    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-adoptopenjdk${_featurever}.1}"
   done
   rm -rf man
   ln -sf /usr/share/man man
