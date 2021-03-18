@@ -12,15 +12,15 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_featurever=15
+_featurever=16
 _interimver=0
-_updatever=2
-_patchver=7
+_updatever=0
+_patchver=36
 pkgrel=1
-pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
-_tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
+pkgver=${_featurever}.+${_patchver}
+_tag_ver=${_featurever}+${_patchver}
 
-pkgname=jdk15-adoptopenjdk
+pkgname=jdk16-adoptopenjdk
 pkgdesc="OpenJDK Java ${_featurever} development kit (AdoptOpenJDK build)"
 arch=('x86_64')
 url='https://adoptopenjdk.net/'
@@ -58,9 +58,9 @@ backup=(etc/${pkgname}/logging.properties
         etc/${pkgname}/security/policy/unlimited/default_local.policy
         etc/${pkgname}/security/policy/unlimited/default_US_export.policy
         etc/${pkgname}/sound.properties)
-install=install_jdk15-adoptopenjdk.sh
+install=install_jdk16-adoptopenjdk.sh
 
-source=(https://github.com/AdoptOpenJDK/openjdk${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
+source=(https://github.com/AdoptOpenJDK/openjdk${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
