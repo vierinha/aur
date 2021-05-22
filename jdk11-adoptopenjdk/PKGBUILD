@@ -14,7 +14,7 @@
 
 _featurever=11
 _interimver=0
-_updatever=10
+_updatever=11
 _patchver=9
 pkgrel=1
 pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
