@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Eclipse Temurin Java 11 Console
+Comment=Eclipse Temurin Java 11 Monitoring & Management Console
+Keywords=java;console;monitoring
+Exec=/usr/lib/jvm/java-11-eclipse-temurin/bin/jconsole
+Terminal=false
+Type=Application
+Categories=Application;System;
+Icon=java

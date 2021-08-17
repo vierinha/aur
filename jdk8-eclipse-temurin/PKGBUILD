@@ -13,16 +13,16 @@
 # https://github.com/michaellass/AUR
 
 _majorver=8
-_minorver=292
-_updatever=10
+_minorver=302
+_updatever=08
 pkgrel=1
 pkgver=${_majorver}.u${_minorver}.b${_updatever}
 _tag_ver=${_majorver}u${_minorver}b${_updatever}
 
-pkgname=jdk8-adoptopenjdk
-pkgdesc="OpenJDK Java ${_majorver} development kit (AdoptOpenJDK build)"
+pkgname=jdk8-eclipse-temurin
+pkgdesc="OpenJDK Java ${_majorver} development kit (Eclipse Temurin build)"
 arch=('x86_64')
-url='https://adoptopenjdk.net/'
+url='https://adoptium.net/'
 license=('custom')
 
 depends=('java-runtime-common>=3' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
@@ -43,9 +43,9 @@ provides=("java-runtime-headless=${_majorver}"
           "openjdk${_majorver}-src=${pkgver}"
           "openjdk-src=${pkgver}")
 
-install=install_jdk8-adoptopenjdk.sh
+install=install_jdk${_majorver}-eclipse-temurin.sh
 
-source=(https://github.com/AdoptOpenJDK/openjdk${_majorver}-binaries/releases/download/jdk${_tag_ver/b/-b}/OpenJDK${_majorver}U-jdk_x64_linux_hotspot_${_tag_ver}.tar.gz
+source=(https://github.com/adoptium/temurin${_majorver}-binaries/releases/download/jdk${_tag_ver/b/-b}/OpenJDK${_majorver}U-jdk_x64_linux_hotspot_${_tag_ver}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-policytool.desktop)
@@ -54,7 +54,7 @@ sha256sums=('SKIP'
             'SKIP'
             'SKIP')
 
-_jvmdir=/usr/lib/jvm/java-${_majorver}-adoptopenjdk
+_jvmdir=/usr/lib/jvm/java-${_majorver}-eclipse-temurin
 _jdkdir=jdk${_tag_ver/b/-b}
 
 package() {
@@ -66,7 +66,7 @@ package() {
 
   # Man pages
   for f in man/man1/* man/ja/man1/* man/ja_JP.UTF-8/man1/*; do
-    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-adoptopenjdk${_majorver}.1}"
+    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-eclipse-temurin${_majorver}.1}"
   done
   rm -rf man
   ln -sf /usr/share/man man

@@ -1,9 +1,9 @@
-pkgbase = jdk8-adoptopenjdk
-	pkgdesc = OpenJDK Java 8 development kit (AdoptOpenJDK build)
-	pkgver = 8.u292.b10
+pkgbase = jdk8-eclipse-temurin
+	pkgdesc = OpenJDK Java 8 development kit (Eclipse Temurin build)
+	pkgver = 8.u302.b08
 	pkgrel = 1
-	url = https://adoptopenjdk.net/
-	install = install_jdk8-adoptopenjdk.sh
+	url = https://adoptium.net/
+	install = install_jdk8-eclipse-temurin.sh
 	arch = x86_64
 	license = custom
 	depends = java-runtime-common>=3
@@ -16,19 +16,19 @@ pkgbase = jdk8-adoptopenjdk
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=8
 	provides = java-runtime-headless-openjdk=8
-	provides = jre8-openjdk-headless=8.u292.b10
-	provides = jre-openjdk-headless=8.u292.b10
+	provides = jre8-openjdk-headless=8.u302.b08
+	provides = jre-openjdk-headless=8.u302.b08
 	provides = java-runtime=8
 	provides = java-runtime-openjdk=8
-	provides = jre8-openjdk=8.u292.b10
-	provides = jre-openjdk=8.u292.b10
+	provides = jre8-openjdk=8.u302.b08
+	provides = jre-openjdk=8.u302.b08
 	provides = java-environment=8
 	provides = java-environment-openjdk=8
-	provides = jdk8-openjdk=8.u292.b10
-	provides = jdk-openjdk=8.u292.b10
-	provides = openjdk8-src=8.u292.b10
-	provides = openjdk-src=8.u292.b10
-	source = https://github.com/AdoptOpenJDK/openjdk8-binaries/releases/download/jdk8u292-b10/OpenJDK8U-jdk_x64_linux_hotspot_8u292b10.tar.gz
+	provides = jdk8-openjdk=8.u302.b08
+	provides = jdk-openjdk=8.u302.b08
+	provides = openjdk8-src=8.u302.b08
+	provides = openjdk-src=8.u302.b08
+	source = https://github.com/adoptium/temurin8-binaries/releases/download/jdk8u302-b08/OpenJDK8U-jdk_x64_linux_hotspot_8u302b08.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-policytool.desktop
@@ -38,4 +38,4 @@ pkgbase = jdk8-adoptopenjdk
 	sha256sums = SKIP
 	sha256sums = SKIP
 
-pkgname = jdk8-adoptopenjdk
+pkgname = jdk8-eclipse-temurin

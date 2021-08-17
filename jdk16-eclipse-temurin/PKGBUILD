@@ -12,18 +12,18 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_featurever=11
+_featurever=16
 _interimver=0
-_updatever=11
-_patchver=9
+_updatever=2
+_patchver=7
 pkgrel=1
 pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
 _tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
 
-pkgname=jdk11-adoptopenjdk
-pkgdesc="OpenJDK Java ${_featurever} development kit (AdoptOpenJDK build)"
+pkgname=jdk16-eclipse-temurin
+pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
 arch=('x86_64')
-url='https://adoptopenjdk.net/'
+url='https://adoptium.net/'
 license=('custom')
 
 depends=('java-runtime-common>=3' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
@@ -57,9 +57,9 @@ backup=(etc/${pkgname}/net.properties
         etc/${pkgname}/management/jmxremote.access
         etc/${pkgname}/management/jmxremote.password.template
         etc/${pkgname}/sound.properties)
-install=install_jdk11-adoptopenjdk.sh
+install=install_jdk${_featurever}-eclipse-temurin.sh
 
-source=(https://github.com/AdoptOpenJDK/openjdk${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
+source=(https://github.com/adoptium/temurin${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
@@ -68,7 +68,7 @@ sha256sums=('SKIP'
             'SKIP'
             'SKIP')
 
-_jvmdir=/usr/lib/jvm/java-${_featurever}-adoptopenjdk
+_jvmdir=/usr/lib/jvm/java-${_featurever}-eclipse-temurin
 _jdkdir=jdk-${_tag_ver}
 
 package() {
@@ -89,8 +89,8 @@ package() {
   ln -sf /usr/share/licenses/${pkgname} legal
 
   # Man pages
-  for f in man/man1/* man/ja/man1/* man/ja_JP.UTF-8/man1/*; do
-    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-adoptopenjdk${_featurever}.1}"
+  for f in man/man1/*; do
+    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-eclipse-temurin${_featurever}.1}"
   done
   rm -rf man
   ln -sf /usr/share/man man

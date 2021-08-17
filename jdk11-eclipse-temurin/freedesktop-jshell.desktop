@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Eclipse Temurin Java 11 Shell
+Comment=Eclipse Temurin Java 11 Shell
+Keywords=java;shell
+Exec=/usr/lib/jvm/java-11-eclipse-temurin/bin/jshell
+Terminal=true
+Type=Application
+Categories=Application;System;
+Icon=java

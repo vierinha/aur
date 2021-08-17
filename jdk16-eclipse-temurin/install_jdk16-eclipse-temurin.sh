@@ -1,4 +1,4 @@
-THIS_JDK='java-11-adoptopenjdk'
+THIS_JDK='java-16-eclipse-temurin'
 
 fix_default() {
   if [ ! -x /usr/bin/java ]; then

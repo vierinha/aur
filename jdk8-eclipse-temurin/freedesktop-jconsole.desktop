@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Eclipse Temurin Java 8 Console
+Comment=Eclipse Temurin Java 8 Monitoring & Management Console
+Keywords=java;console;monitoring
+Exec=/usr/lib/jvm/java-8-eclipse-temurin/bin/jconsole
+Terminal=false
+Type=Application
+Categories=Application;System;
+Icon=java
