@@ -12,15 +12,15 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_featurever=16
+_featurever=17
 _interimver=0
-_updatever=2
-_patchver=7
+_updatever=0
+_patchver=35
 pkgrel=1
-pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
-_tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
+pkgver=${_featurever}.+${_patchver}
+_tag_ver=${_featurever}+${_patchver}
 
-pkgname=jdk16-eclipse-temurin
+pkgname=jdk17-eclipse-temurin
 pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
 arch=('x86_64')
 url='https://adoptium.net/'
@@ -59,7 +59,7 @@ backup=(etc/${pkgname}/net.properties
         etc/${pkgname}/sound.properties)
 install=install_jdk${_featurever}-eclipse-temurin.sh
 
-source=(https://github.com/adoptium/temurin${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
+source=(https://github.com/adoptium/temurin${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
         freedesktop-jconsole.desktop
         freedesktop-jshell.desktop)
