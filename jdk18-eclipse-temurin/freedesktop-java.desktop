@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Eclipse Temurin Java 18 Runtime
+Comment=Eclipse Temurin Java 18 Runtime
+Keywords=java;runtime
+Exec=/usr/lib/jvm/java-18-eclipse-temurin/bin/java -jar
+Terminal=false
+Type=Application
+MimeType=application/x-java-archive;application/java-archive;application/x-jar;
+NoDisplay=true

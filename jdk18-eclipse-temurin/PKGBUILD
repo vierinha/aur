@@ -1,0 +1,109 @@
+# Maintainer: Ricardo Alexandre Vieira <vierinha@gmail.com>
+
+# This is a slitly modified version of the jdk11-adoptopenjdk PKGBUILD
+# which is maintained by Michael Lass <bevan@bi-co.net>
+
+# Maintainer: Michael Lass <bevan@bi-co.net>
+
+# This PKGBUILD heavily borrows from java-openjdk in [extra] maintained by:
+# Levente Polyak <anthraxx[at]archlinux[dot]org>
+# Guillaume ALAUX <guillaume@archlinux.org>
+
+# This PKGBUILD is maintained on github:
+# https://github.com/michaellass/AUR
+
+_featurever=18
+_interimver=0
+_updatever=0
+_patchver=36
+pkgrel=1
+pkgver=${_featurever}.+${_patchver}
+_tag_ver=${_featurever}+${_patchver}
+
+pkgname=jdk18-eclipse-temurin
+pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
+arch=('x86_64')
+url='https://adoptium.net/'
+license=('custom')
+
+depends=('java-runtime-common>=3' 'ca-certificates-utils' 'desktop-file-utils' 'libxrender' 'libxtst' 'alsa-lib')
+optdepends=('gtk2: for the Gtk+ 2 look and feel'
+            'gtk3: for the Gtk+ 3 look and feel')
+provides=("java-runtime-headless=${_featurever}"
+          "java-runtime-headless-openjdk=${_featurever}"
+          "jre${_featurever}-openjdk-headless=${pkgver}"
+          "jre-openjdk-headless=${pkgver}"
+          "java-runtime=${_featurever}"
+          "java-runtime-openjdk=${_featurever}"
+          "jre${_featurever}-openjdk=${pkgver}"
+          "jre-openjdk=${pkgver}"
+          "java-environment=${_featurever}"
+          "java-environment-openjdk=${_featurever}"
+          "jdk${_featurever}-openjdk=${pkgver}"
+          "jdk-openjdk=${pkgver}"
+          "openjdk${_featurever}-src=${pkgver}"
+          "openjdk-src=${pkgver}")
+backup=(etc/${pkgname}/net.properties
+        etc/${pkgname}/logging.properties
+        etc/${pkgname}/security/java.security
+        etc/${pkgname}/security/policy/limited/exempt_local.policy
+        etc/${pkgname}/security/policy/limited/default_US_export.policy
+        etc/${pkgname}/security/policy/limited/default_local.policy
+        etc/${pkgname}/security/policy/unlimited/default_US_export.policy
+        etc/${pkgname}/security/policy/unlimited/default_local.policy
+        etc/${pkgname}/security/policy/README.txt
+        etc/${pkgname}/security/java.policy
+        etc/${pkgname}/management/management.properties
+        etc/${pkgname}/management/jmxremote.access
+        etc/${pkgname}/management/jmxremote.password.template
+        etc/${pkgname}/sound.properties)
+install=install_jdk${_featurever}-eclipse-temurin.sh
+
+source=(https://github.com/adoptium/temurin${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
+        freedesktop-java.desktop
+        freedesktop-jconsole.desktop
+        freedesktop-jshell.desktop)
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP'
+            'SKIP')
+
+_jvmdir=/usr/lib/jvm/java-${_featurever}-eclipse-temurin
+_jdkdir=jdk-${_tag_ver}
+
+package() {
+
+  install -dm 755 "${pkgdir}${_jvmdir}"
+  cp -a "${srcdir}/${_jdkdir}"/* "${pkgdir}${_jvmdir}"
+
+  cd "${pkgdir}${_jvmdir}"
+
+  # Conf
+  install -dm 755 "${pkgdir}/etc"
+  mv conf "${pkgdir}/etc/${pkgname}"
+  ln -sf /etc/${pkgname} conf
+
+  # Legal
+  install -dm 755 "${pkgdir}/usr/share/licenses"
+  mv legal "${pkgdir}/usr/share/licenses/${pkgname}"
+  ln -sf /usr/share/licenses/${pkgname} legal
+
+  # Man pages
+  for f in man/man1/*; do
+    install -Dm 644 "${f}" "${pkgdir}/usr/share/${f/\.1/-eclipse-temurin${_featurever}.1}"
+  done
+  rm -rf man
+  ln -sf /usr/share/man man
+
+  # Link JKS keystore from ca-certificates-utils
+  rm -f lib/security/cacerts
+  ln -sf /etc/ssl/certs/java/cacerts lib/security/cacerts
+
+  # Desktop files
+  for f in jconsole java jshell; do
+    install -Dm 644 \
+      "${srcdir}/freedesktop-${f}.desktop" \
+      "${pkgdir}/usr/share/applications/${f}-${pkgname}.desktop"
+  done
+
+}
