@@ -1,6 +1,6 @@
 pkgbase = jdk18-eclipse-temurin
 	pkgdesc = OpenJDK Java 18 development kit (Eclipse Temurin build)
-	pkgver = 18.+36
+	pkgver = 18.0.1+10
 	pkgrel = 1
 	url = https://adoptium.net/
 	install = install_jdk18-eclipse-temurin.sh
@@ -16,18 +16,18 @@ pkgbase = jdk18-eclipse-temurin
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=18
 	provides = java-runtime-headless-openjdk=18
-	provides = jre18-openjdk-headless=18.+36
-	provides = jre-openjdk-headless=18.+36
+	provides = jre18-openjdk-headless=18.0.1+10
+	provides = jre-openjdk-headless=18.0.1+10
 	provides = java-runtime=18
 	provides = java-runtime-openjdk=18
-	provides = jre18-openjdk=18.+36
-	provides = jre-openjdk=18.+36
+	provides = jre18-openjdk=18.0.1+10
+	provides = jre-openjdk=18.0.1+10
 	provides = java-environment=18
 	provides = java-environment-openjdk=18
-	provides = jdk18-openjdk=18.+36
-	provides = jdk-openjdk=18.+36
-	provides = openjdk18-src=18.+36
-	provides = openjdk-src=18.+36
+	provides = jdk18-openjdk=18.0.1+10
+	provides = jdk-openjdk=18.0.1+10
+	provides = openjdk18-src=18.0.1+10
+	provides = openjdk-src=18.0.1+10
 	backup = etc/jdk18-eclipse-temurin/net.properties
 	backup = etc/jdk18-eclipse-temurin/logging.properties
 	backup = etc/jdk18-eclipse-temurin/security/java.security
@@ -42,7 +42,7 @@ pkgbase = jdk18-eclipse-temurin
 	backup = etc/jdk18-eclipse-temurin/management/jmxremote.access
 	backup = etc/jdk18-eclipse-temurin/management/jmxremote.password.template
 	backup = etc/jdk18-eclipse-temurin/sound.properties
-	source = https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18%2B36/OpenJDK18U-jdk_x64_linux_hotspot_18_36.tar.gz
+	source = https://github.com/adoptium/temurin18-binaries/releases/download/jdk-18.0.1%2B10/OpenJDK18U-jdk_x64_linux_hotspot_18.0.1_10.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-jshell.desktop
