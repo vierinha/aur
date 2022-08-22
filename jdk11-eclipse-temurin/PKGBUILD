@@ -15,10 +15,11 @@
 _featurever=11
 _interimver=0
 _updatever=16
-_patchver=8
+_minver=1
+_patchver=1
 pkgrel=1
-pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
-_tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
+pkgver=${_featurever}.${_interimver}.${_updatever}.${_minver}.+${_patchver}
+_tag_ver=${_featurever}.${_interimver}.${_updatever}.${_minver}+${_patchver}
 
 pkgname=jdk11-eclipse-temurin
 pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
