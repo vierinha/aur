@@ -1,6 +1,6 @@
 pkgbase = jdk19-eclipse-temurin
 	pkgdesc = OpenJDK Java 19 development kit (Eclipse Temurin build)
-	pkgver = 19.0.1.+10
+	pkgver = 19.0.2.+7
 	pkgrel = 1
 	url = https://adoptium.net/
 	install = install_jdk19-eclipse-temurin.sh
@@ -16,18 +16,18 @@ pkgbase = jdk19-eclipse-temurin
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=19
 	provides = java-runtime-headless-openjdk=19
-	provides = jre19-openjdk-headless=19.0.1.+10
-	provides = jre-openjdk-headless=19.0.1.+10
+	provides = jre19-openjdk-headless=19.0.2.+7
+	provides = jre-openjdk-headless=19.0.2.+7
 	provides = java-runtime=19
 	provides = java-runtime-openjdk=19
-	provides = jre19-openjdk=19.0.1.+10
-	provides = jre-openjdk=19.0.1.+10
+	provides = jre19-openjdk=19.0.2.+7
+	provides = jre-openjdk=19.0.2.+7
 	provides = java-environment=19
 	provides = java-environment-openjdk=19
-	provides = jdk19-openjdk=19.0.1.+10
-	provides = jdk-openjdk=19.0.1.+10
-	provides = openjdk19-src=19.0.1.+10
-	provides = openjdk-src=19.0.1.+10
+	provides = jdk19-openjdk=19.0.2.+7
+	provides = jdk-openjdk=19.0.2.+7
+	provides = openjdk19-src=19.0.2.+7
+	provides = openjdk-src=19.0.2.+7
 	backup = etc/jdk19-eclipse-temurin/net.properties
 	backup = etc/jdk19-eclipse-temurin/logging.properties
 	backup = etc/jdk19-eclipse-temurin/security/java.security
@@ -42,7 +42,7 @@ pkgbase = jdk19-eclipse-temurin
 	backup = etc/jdk19-eclipse-temurin/management/jmxremote.access
 	backup = etc/jdk19-eclipse-temurin/management/jmxremote.password.template
 	backup = etc/jdk19-eclipse-temurin/sound.properties
-	source = https://github.com/adoptium/temurin19-binaries/releases/download/jdk-19.0.1%2B10/OpenJDK19U-jdk_x64_linux_hotspot_19.0.1_10.tar.gz
+	source = https://github.com/adoptium/temurin19-binaries/releases/download/jdk-19.0.2%2B7/OpenJDK19U-jdk_x64_linux_hotspot_19.0.2_7.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-jshell.desktop

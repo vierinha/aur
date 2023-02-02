@@ -14,8 +14,8 @@
 
 _featurever=11
 _interimver=0
-_updatever=17
-_patchver=8
+_updatever=18
+_patchver=10
 pkgrel=1
 pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
 _tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
