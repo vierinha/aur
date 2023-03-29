@@ -1,4 +1,4 @@
-THIS_JDK='java-19-eclipse-temurin'
+THIS_JDK='java-20-eclipse-temurin'
 
 fix_default() {
   if [ ! -x /usr/bin/java ]; then
