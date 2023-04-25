@@ -14,11 +14,11 @@
 
 _featurever=20
 _interimver=0
-_updatever=0
-_patchver=36
+_updatever=1
+_patchver=9
 pkgrel=1
-pkgver=${_featurever}.+${_patchver}
-_tag_ver=${_featurever}+${_patchver}
+pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
+_tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
 
 pkgname=jdk20-eclipse-temurin
 pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
