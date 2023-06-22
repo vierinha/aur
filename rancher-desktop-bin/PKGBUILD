@@ -1,0 +1,47 @@
+# Maintainer: Ricardo Alexandre Vieira <vierinha@gmail.com>
+# This is a modified version of the rancher-desktop PKGBUILD which is maintained by:
+# Maintainer: Dominic Giebert <dominic.giebert@gmail.com>
+# Contributor: Parker Johansen <johansen.parker@gmail.com>
+
+pkgname=rancher-desktop-bin
+pkgdesc='Container Management and Kubernetes on the Desktop'
+pkgver=1.9.0
+pkgrel=1
+arch=('x86_64')
+license=('Apache')
+url='https://rancherdesktop.io/'
+makedepends=()
+provides=('rancher-desktop' 'docker' 'helm' 'kubectl' 'nerdctl' 'limactl')
+depends=('qemu')
+source=("https://github.com/rancher-sandbox/rancher-desktop/releases/download/v${pkgver}/rancher-desktop-linux-v${pkgver}.zip")
+sha256sums=('SKIP')
+
+build() {
+  # Generate icons
+  icon="resources/resources/icons/logo-square-512.png"
+  for size in 512x512 256x256 128x128 96x96 64x64 48x48 32x32 24x24 16x16; do
+        mkdir "share/icons/hicolor/${size}/apps" -p
+        convert -resize "${size}" "${icon}" "share/icons/hicolor/${size}/apps/rancher-desktop.png"
+  done
+}
+
+package() {
+  # Copy over the data
+  install -d "$pkgdir/opt/${pkgname}"
+  install -d "$pkgdir/usr/share/icons/hicolor/"
+  cp -r ./* "$pkgdir/opt/${pkgname}/"
+  cp -r share/icons/hicolor/* "$pkgdir/usr/share/icons/hicolor/"
+  install -Dm644 LICENSE.electron.txt -t "${pkgdir}/usr/share/licenses/${pkgname}"
+  install -Dm644 LICENSES.chromium.html -t "${pkgdir}/usr/share/licenses/${pkgname}"
+
+  # Some weird fix
+  rm -f "$pkgdir/opt/${pkgname}/rancher-desktop-linux-v${pkgver}.zip"
+
+  # Add integration for desktop env
+  install -Dm644 resources/resources/linux/rancher-desktop.desktop -t "$pkgdir/usr/share/applications"
+  install -Dm644 resources/resources/linux/rancher-desktop.appdata.xml -t "$pkgdir/usr/share/metainfo"
+
+  # Creating the symlink for better usage
+  install -d "$pkgdir"/usr/bin/
+  ln -sf /opt/${pkgname}/rancher-desktop ${pkgdir}/usr/bin/rancher-desktop
+}
