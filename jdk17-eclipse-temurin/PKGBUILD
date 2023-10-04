@@ -14,11 +14,12 @@
 
 _featurever=17
 _interimver=0
-_updatever=7
-_patchver=7
+_updatever=8
+_patchver=1
+_buildver=1
 pkgrel=1
-pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
-_tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
+pkgver=${_featurever}.${_interimver}.${_updatever}.${_patchver}.+${_buildver}
+_tag_ver=${_featurever}.${_interimver}.${_updatever}.${_patchver}+${_buildver}
 
 pkgname=jdk17-eclipse-temurin
 pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
@@ -58,6 +59,11 @@ backup=(etc/${pkgname}/net.properties
         etc/${pkgname}/management/jmxremote.password.template
         etc/${pkgname}/sound.properties)
 install=install_jdk${_featurever}-eclipse-temurin.sh
+
+
+#	source = https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.7%2B7/OpenJDK17U-jdk_x64_linux_hotspot_17.0.7_7.tar.gz
+#	source = https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.8.1%2B1/OpenJDK17U-jdk_x64_linux_hotspot_17.0.8.1_1.tar.gz
+
 
 source=(https://github.com/adoptium/temurin${_featurever}-binaries/releases/download/jdk-${_tag_ver/+/%2B}/OpenJDK${_featurever}U-jdk_x64_linux_hotspot_${_tag_ver/+/_}.tar.gz
         freedesktop-java.desktop
