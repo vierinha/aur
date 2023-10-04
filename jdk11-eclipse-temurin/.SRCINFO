@@ -1,6 +1,6 @@
 pkgbase = jdk11-eclipse-temurin
 	pkgdesc = OpenJDK Java 11 development kit (Eclipse Temurin build)
-	pkgver = 11.0.19.+7
+	pkgver = 11.0.20.1.+1
 	pkgrel = 1
 	url = https://adoptium.net/
 	install = install_jdk11-eclipse-temurin.sh
@@ -16,18 +16,18 @@ pkgbase = jdk11-eclipse-temurin
 	optdepends = gtk3: for the Gtk+ 3 look and feel
 	provides = java-runtime-headless=11
 	provides = java-runtime-headless-openjdk=11
-	provides = jre11-openjdk-headless=11.0.19.+7
-	provides = jre-openjdk-headless=11.0.19.+7
+	provides = jre11-openjdk-headless=11.0.20.1.+1
+	provides = jre-openjdk-headless=11.0.20.1.+1
 	provides = java-runtime=11
 	provides = java-runtime-openjdk=11
-	provides = jre11-openjdk=11.0.19.+7
-	provides = jre-openjdk=11.0.19.+7
+	provides = jre11-openjdk=11.0.20.1.+1
+	provides = jre-openjdk=11.0.20.1.+1
 	provides = java-environment=11
 	provides = java-environment-openjdk=11
-	provides = jdk11-openjdk=11.0.19.+7
-	provides = jdk-openjdk=11.0.19.+7
-	provides = openjdk11-src=11.0.19.+7
-	provides = openjdk-src=11.0.19.+7
+	provides = jdk11-openjdk=11.0.20.1.+1
+	provides = jdk-openjdk=11.0.20.1.+1
+	provides = openjdk11-src=11.0.20.1.+1
+	provides = openjdk-src=11.0.20.1.+1
 	backup = etc/jdk11-eclipse-temurin/net.properties
 	backup = etc/jdk11-eclipse-temurin/logging.properties
 	backup = etc/jdk11-eclipse-temurin/security/java.security
@@ -42,7 +42,7 @@ pkgbase = jdk11-eclipse-temurin
 	backup = etc/jdk11-eclipse-temurin/management/jmxremote.access
 	backup = etc/jdk11-eclipse-temurin/management/jmxremote.password.template
 	backup = etc/jdk11-eclipse-temurin/sound.properties
-	source = https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.19%2B7/OpenJDK11U-jdk_x64_linux_hotspot_11.0.19_7.tar.gz
+	source = https://github.com/adoptium/temurin11-binaries/releases/download/jdk-11.0.20.1%2B1/OpenJDK11U-jdk_x64_linux_hotspot_11.0.20.1_1.tar.gz
 	source = freedesktop-java.desktop
 	source = freedesktop-jconsole.desktop
 	source = freedesktop-jshell.desktop
