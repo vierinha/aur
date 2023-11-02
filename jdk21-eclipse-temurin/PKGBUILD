@@ -12,15 +12,15 @@
 # This PKGBUILD is maintained on github:
 # https://github.com/michaellass/AUR
 
-_featurever=20
+_featurever=21
 _interimver=0
 _updatever=1
-_patchver=9
+_patchver=12
 pkgrel=1
 pkgver=${_featurever}.${_interimver}.${_updatever}.+${_patchver}
 _tag_ver=${_featurever}.${_interimver}.${_updatever}+${_patchver}
 
-pkgname=jdk20-eclipse-temurin
+pkgname=jdk21-eclipse-temurin
 pkgdesc="OpenJDK Java ${_featurever} development kit (Eclipse Temurin build)"
 arch=('x86_64')
 url='https://adoptium.net/'

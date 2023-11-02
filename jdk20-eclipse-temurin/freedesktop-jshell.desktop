@@ -1,9 +1,0 @@
-[Desktop Entry]
-Name=Eclipse Temurin Java 20 Shell
-Comment=Eclipse Temurin Java 20 Shell
-Keywords=java;shell
-Exec=/usr/lib/jvm/java-20-eclipse-temurin/bin/jshell
-Terminal=true
-Type=Application
-Categories=Application;System;
-Icon=java

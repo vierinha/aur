@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=Eclipse Temurin Java 20 Runtime
-Comment=Eclipse Temurin Java 20 Runtime
+Name=Eclipse Temurin Java 21 Runtime
+Comment=Eclipse Temurin Java 21 Runtime
 Keywords=java;runtime
-Exec=/usr/lib/jvm/java-20-eclipse-temurin/bin/java -jar
+Exec=/usr/lib/jvm/java-21-eclipse-temurin/bin/java -jar
 Terminal=false
 Type=Application
 MimeType=application/x-java-archive;application/java-archive;application/x-jar;
