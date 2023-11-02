@@ -13,8 +13,8 @@
 # https://github.com/michaellass/AUR
 
 _majorver=8
-_minorver=382
-_updatever=05
+_minorver=392
+_updatever=08
 pkgrel=1
 pkgver=${_majorver}.u${_minorver}.b${_updatever}
 _tag_ver=${_majorver}u${_minorver}b${_updatever}
